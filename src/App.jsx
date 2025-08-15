@@ -1,9 +1,12 @@
 // import Header from "./components/Header"
 // import Main from "./components/Main"
-import Comp1 from "./components/Component1";
-import Comp2 from "./components/Component2";
+// import Comp1 from "./components/Component1";
+// import Comp2 from "./components/Component2";
 // import Comp3 from "./components/Componet3";
+// import Child1 from "./components/Child"
 import { useState } from "react";
+// import "./App.css"
+// import styles from "./App.module.css";
 function App() {
   // console.log("App Componet");
 
@@ -17,22 +20,59 @@ function App() {
   // let userType = "admin"
   // let userType = "user";
 
-  let loginStatus = true;
+  // let loginStatus = true;
 
-  const [userType, setUserType] = useState("user");
-  const handleUserRole = () => {
-    userType == "user" ? setUserType("admin") : setUserType("user");
+  // const [userType, setUserType] = useState("user");
+  // const handleUserRole = () => {
+  //   userType == "user" ? setUserType("admin") : setUserType("user");
+  // };
+
+  // const [data , setData] = useState([{name: "Abdullah", email: "abdullah@gmail.com"}])
+  // console.log(data);
+
+  // const [childState, setChildState] = useState("")
+  // const getChildData = (childData) => {
+  //   console.log("Get Child Data", childData);
+  //   setChildState(childData)
+  // }
+
+  // const userArr = ["Abdullah", "Jaffar", "Husnain"]
+
+  const [name, setName] = useState("");
+  const inpuHandler = () => {
+    console.log(name);
   };
-
-  const [data , setData] = useState([{name: "Abdullah", email: "abdullah@gmail.com"}])
-  console.log(data);
-  
-
 
   return (
     <>
+      <input
+        type="text"
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
+      />
+      <button onClick={inpuHandler}>Get Value</button>
 
-    <Comp2 data = {data} />
+      {/* {userArr} */}
+
+      {/* {userArr.map((value, index) => (
+        <h1 key={index}>Hello {value}</h1>
+      ))}
+
+      {userArr.map((value, index) => {
+        return (
+          <div key={index}>
+            <h1>Hello {value}</h1>
+          </div>
+        );
+      })} */}
+
+      {/* <h1>Recieved Data: {childState}</h1> */}
+      {/* <Child1 /> */}
+      {/* <h1 className={styles.h1}>Parent Hello</h1>
+    <Child1 /> */}
+
+      {/* <Comp2 data = {data} />
 
     { loginStatus && (
         <div>
@@ -41,7 +81,7 @@ function App() {
             Switch To {userType == "user" ? "Admin" : "User"}
           </button>
         </div>
-      )}
+      )} */}
 
       {/* <Comp1 name = "Abdullah" email = "abdullah@gmail.com" /> */}
       {/* <Header />
