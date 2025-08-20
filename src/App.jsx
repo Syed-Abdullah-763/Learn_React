@@ -4,7 +4,7 @@
 // import Comp2 from "./components/Component2";
 // import Comp3 from "./components/Componet3";
 // import Child1 from "./components/Child"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import "./App.css"
 // import styles from "./App.module.css";
 function App() {
@@ -38,20 +38,85 @@ function App() {
 
   // const userArr = ["Abdullah", "Jaffar", "Husnain"]
 
-  const [name, setName] = useState("");
-  const inpuHandler = () => {
-    console.log(name);
-  };
+  // const [name, setName] = useState("");
+  // const inpuHandler = () => {
+  //   console.log(name);
+  // };
 
+  // const [name, setName] = useState("")
+  // const [email, setEmail] = useState("")
+  // const [password, setPassword] = useState("")
+
+  // const formHandler = (event) => {
+  //   console.log("name", name);
+  //   console.log("email" ,email);
+  //   console.log("password" ,password);
+    
+  //   console.log(event);
+  //   console.log(event.target);
+  //   console.log(event.target.firstElementChild.value);
+  //   event.preventDefault()
+  // }
+
+  let [counter, setCounter] = useState(0)
+  const [value, setValue] = useState(0)
+
+  const foo = () => {
+    console.log("Foo");
+  }
+
+  // useEffect(() => {
+  //   foo()
+  // }, [])
+
+  // useEffect(() => {
+  //   console.log("with counter");
+  // }, [counter])
+
+  useEffect(() => {
+    console.log(value);
+    
+  }, [value])
+
+  
   return (
     <>
-      <input
+
+    <h1>Use Effect</h1>
+    <input type="text" placeholder="Counter..." onChange={(e) => setValue(e.target.value)} value={value} />
+    <button onClick={() => setCounter(++counter)}>Counter: {counter}</button>
+
+
+
+      {/* <form onSubmit={formHandler}>
+        <input
         type="text"
         onChange={(event) => {
           setName(event.target.value);
         }}
       />
-      <button onClick={inpuHandler}>Get Value</button>
+      <input
+        type="text"
+        onChange={(event) => {
+          setEmail(event.target.value);
+        }}
+      />
+      <input
+        type="password"
+        onChange={(event) => {
+          setPassword(event.target.value);
+        }}
+      />
+      <button>Get Value</button>
+      </form> */}
+
+      {/* <input
+        type="text"
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
+      />
+      <button onClick={inpuHandler}>Get Value</button> */}
 
       {/* {userArr} */}
 
